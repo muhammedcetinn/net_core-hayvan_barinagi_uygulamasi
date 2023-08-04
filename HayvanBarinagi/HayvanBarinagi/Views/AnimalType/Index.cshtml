@@ -1,0 +1,31 @@
+﻿@model List<AnimalType>
+@if(TempData["Success"] != null)
+{
+    <table class="table table-bordered bg-success">
+        <tr><th>@TempData["Success"]</th></tr>
+    </table>
+}
+<div>
+    <div>
+        <h1>Animal Types</h1>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Type-Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var animalType in Model)
+        {
+            <tr>
+                <td>@animalType.Name</td>
+                <td><a asp-controller="AnimalType" asp-action="EditType" asp-route-id="@animalType.Id" type="button" class="btn">Edit</a></td>
+                <td><a asp-controller="AnimalType" asp-action="DeleteType" asp-route-id="@animalType.Id" type="button" class="btn">Delete</a></td>
+            </tr>
+        }
+
+    </table>
+    <div class="row">
+        <a asp-controller="AnimalType" asp-action="AddNewType" class="btn" type="button">Add A New Animal Type</a>
+    </div>
+</div>

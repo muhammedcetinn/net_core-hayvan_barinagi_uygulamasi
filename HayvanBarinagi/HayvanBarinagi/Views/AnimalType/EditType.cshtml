@@ -1,0 +1,19 @@
+﻿@model AnimalType
+
+<form method="post">
+    <!-- <input asp-for="Id" hidden/> -->
+    <div class="">
+        <div class="">
+            <h2 class="">Edit Animal Type</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" class=""></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-primary"></span>
+        </div>
+        <button type="submit" class="btn" >Edit Type</button>
+        <a asp-controller="AnimalType" asp-action="Index" class="btn">Show Animal Types</a>
+    </div>
+</form>
+

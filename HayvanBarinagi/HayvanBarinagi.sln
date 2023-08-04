@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanBarinagi", "HayvanBarinagi\HayvanBarinagi.csproj", "{AED747A4-EEDC-4E15-B15B-A674217B5C14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanBarinagi", "HayvanBarinagi\HayvanBarinagi.csproj", "{5F4ABA8F-B4F8-4684-9192-B1DEF8833E3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AED747A4-EEDC-4E15-B15B-A674217B5C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AED747A4-EEDC-4E15-B15B-A674217B5C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AED747A4-EEDC-4E15-B15B-A674217B5C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AED747A4-EEDC-4E15-B15B-A674217B5C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F4ABA8F-B4F8-4684-9192-B1DEF8833E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F4ABA8F-B4F8-4684-9192-B1DEF8833E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F4ABA8F-B4F8-4684-9192-B1DEF8833E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F4ABA8F-B4F8-4684-9192-B1DEF8833E3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {171E2904-ACEF-43F0-82F1-C9B4E4393305}
+		SolutionGuid = {2057195A-B84C-46A6-8A07-1DE8B41C854D}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,17 @@
+﻿@model AnimalType
+
+<form method="post">
+    <!-- <input asp-for="Id" hidden/> -->
+    <div class="">
+        <div class="">
+            <h2 class="">Delete Animal Type</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" class=""></label>
+            <input asp-for="Name" disabled class="form-control" />
+        </div>
+        <button type="submit" class="btn">Delete Type</button>
+        <a asp-controller="AnimalType" asp-action="Index" class="btn">Show Animal Types</a>
+    </div>
+</form>

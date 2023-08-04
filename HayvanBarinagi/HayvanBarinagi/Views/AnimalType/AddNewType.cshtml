@@ -1,0 +1,18 @@
+﻿@model AnimalType
+
+<form method="post">
+    <div class="">
+        <div class="">
+            <h2 class="">Add New Animal Type</h2>
+            <hr />
+        </div>
+        <div class="">
+            <label asp-for="Name" class=""></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-primary"></span>
+        </div>
+        <button type="submit" class="btn">Add Type</button>
+        <a asp-controller="AnimalType" asp-action="Index" class="btn">Show Animal Types</a>
+    </div>
+</form>
+
