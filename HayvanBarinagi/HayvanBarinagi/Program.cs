@@ -1,6 +1,7 @@
 using HayvanBarinagi.Models;
 using HayvanBarinagi.Utility;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,14 +11,18 @@ builder.Services.AddControllersWithViews();
 
 //Identity Islemleri
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-//Identýty ekledýkten sonra razor kullanýcaz dedik
+//Identï¿½ty ekledï¿½kten sonra razor kullanï¿½caz dedik
 builder.Services.AddRazorPages();
+//email
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 // Veri tabani kopru dosyami kullan
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-//AnimalTypeController daki _animalTypeRepository nin olusturulmasini saglar : Dependenct Injection
-builder.Services.AddScoped<IAnimalTypeRepository, AnimalTypeRepository>();
 
+//AnimalTypeController daki _animalTypeRepository nin olusturulmasini saglar : Dependency Injection
+builder.Services.AddScoped<IAnimalTypeRepository, AnimalTypeRepository>();
+//AnimalController daki _animalRepository nin olusturulmasini saglar : Dependency Injection
+builder.Services.AddScoped<IAnimalRepository, AnimalRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,7 +35,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-//ekledým
+//ekledï¿½m
 app.MapRazorPages();
 
 app.UseRouting();

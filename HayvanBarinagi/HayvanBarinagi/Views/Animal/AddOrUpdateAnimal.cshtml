@@ -1,0 +1,66 @@
+﻿@using HayvanBarinagi.Utility;
+@model Animal
+
+<form method="post" enctype="multipart/form-data">
+    @*enctype="multipart/form-data" Filedan resim eklerken hata alırız eklemezsek*@
+    <input asp-for="ImageURL" hidden /> @*Resim url null gitmemesi için. file name aldık çünkü biz*@
+    <div class="">
+        <div class="">
+            <div class="">
+                <div class="">
+                    <h2 class="">@(Model == null ? "Add New Animal" : "Edit Animal")</h2>
+                    <hr />
+                </div>
+                <div class="">
+                    <label asp-for="Name" class=""></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class=""></span>
+                </div>
+                <div class="">
+                    <label asp-for="Age" class=""></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class=""></span>
+                </div>
+                <div class="">
+                    <label asp-for="AnimalTypeId" class=""></label>
+                    <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
+                </div>
+                <div class="">
+                    <label asp-for="Features" class=""></label>
+                    <input asp-for="Features" class="form-control" />
+                    <span asp-validation-for="Features" class=""></span>
+                </div>
+                <div class="" hidden>
+                    <label asp-for="Recipient" class=""></label>
+                    <input asp-for="Recipient" class="form-control" value="NULL" />
+                    <span asp-validation-for="Recipient" class=""></span>
+                </div>
+                <div class="">
+                    <label asp-for="ImageURL" class=""></label>
+                    <input type="file" name="file" class="form-control" />
+                </div>
+                @if (User.IsInRole(UserRoles.Role_Admin))
+                {
+                    @if (Model != null)
+                    {
+                        <button type="submit" class="btn">Update Animal</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn">Add Animal</button>
+
+                    }
+                }
+                
+                <a asp-controller="Animal" asp-action="Index" class="btn">Show Animals</a>
+            </div>
+        </div>
+        <div class="">
+            @if (Model != null)
+            {
+                <img src="@Model.ImageURL" width="100%" />
+            }
+        </div>
+    </div>
+</form>
+

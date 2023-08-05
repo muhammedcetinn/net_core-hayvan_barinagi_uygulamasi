@@ -1,8 +1,12 @@
 ﻿using HayvanBarinagi.Models;
+using HayvanBarinagi.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace HayvanBarinagi.Controllers
 {
+    [Authorize(Roles = UserRoles.Role_Admin)]
     public class AnimalTypeController : Controller
     {
         //Dependency Injection

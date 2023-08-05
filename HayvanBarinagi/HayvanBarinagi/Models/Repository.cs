@@ -37,6 +37,19 @@ namespace HayvanBarinagi.Models
             }
             return request.FirstOrDefault();
         }
+        public IEnumerable<T> GetReq(Expression<Func<T, bool>> filter, string? includeProps = null)
+        {
+            IQueryable<T> request = dbSet;
+            request = request.Where(filter);
+            if (!string.IsNullOrEmpty(includeProps))
+            {
+                foreach (var prop in includeProps.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    request = request.Include(prop);
+                }
+            }
+            return request.ToList();
+        }
 
         public IEnumerable<T> GetAll(string? includeProps = null)
         {

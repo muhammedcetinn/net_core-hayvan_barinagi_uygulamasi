@@ -1,0 +1,48 @@
+﻿@model List<Animal>
+@if (TempData["Success"] != null)
+{
+    <table class="table table-bordered bg-success">
+        <tr><th>@TempData["Success"]</th></tr>
+    </table>
+}
+<div class="container">
+    <div class="">
+        <h1>Requests</h1>
+    </div>
+    @if(Model == null){<tr><td>Request is not found</td></tr>}
+    <table class="table table-bordered">
+        <tr>
+            <th>Customer Name</th>
+            <th>Animal Name</th>
+            <th>Age</th>
+            <th>Type</th>
+            <th>Features</th>
+            <th>Image</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var animal in Model)
+        {
+            if (animal.isRequest == true && animal.Status == false)
+            {
+                <tr>
+                    <td>@animal.Recipient</td>
+                    <td>@animal.Name</td>
+                    <td>@animal.Age</td>
+                    <td>@animal.AnimalType.Name</td>
+                    <td>@animal.Features</td>
+                    <td><img src="@animal.ImageURL" /></td>
+
+                    <td><a asp-controller="Animal" asp-action="AcceptReq" asp-route-id="@animal.Id" type="button" class="btn">Accept</a></td>
+                    <td><a asp-controller="Animal" asp-action="DeclineReq" asp-route-id="@animal.Id" type="button" class="btn">Decline</a></td>
+
+                    @*
+                    <td><a asp-controller="Animal" asp-action="AcceptRequest" asp-route-id="@animal.Id" type="button" class="btn">Accept</a></td>
+                    <td><a asp-controller="Animal" asp-action="DeclineRequest" asp-route-id="@animal.Id" type="button" class="btn">Decline</a></td>
+                    *@
+                </tr>
+            }
+        }
+
+    </table>
+</div>
