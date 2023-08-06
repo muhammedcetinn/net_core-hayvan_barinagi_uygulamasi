@@ -2,16 +2,17 @@
 
 <form method="post">
     <!-- <input asp-for="Id" hidden/> -->
-    <div class="">
-        <div class="">
-            <h2 class="">Delete Animal Type</h2>
-            <hr />
-        </div>
-        <div class="mb-3">
-            <label asp-for="Name" class=""></label>
+    <div class="container">
+        <div class="row text-center mt-3"><h3>Delete Type</h3></div><hr />
+        <div class="row col-md-3 mx-auto my-3 mt-4">
+            <label asp-for="Name" class="pb-1"></label>
             <input asp-for="Name" disabled class="form-control" />
         </div>
-        <button type="submit" class="btn">Delete Type</button>
-        <a asp-controller="AnimalType" asp-action="Index" class="btn">Show Animal Types</a>
+        <div class="row col-md-3 mx-auto my-3">
+            <button type="submit" class="btn btn-primary text-white">Delete Type</button>
+        </div>
+        <div class="row col-md-3 mx-auto m-4">
+            <a asp-controller="AnimalType" asp-action="Index" class="btn btn-danger text-white">Show Animal Types</a>
+        </div>
     </div>
 </form>

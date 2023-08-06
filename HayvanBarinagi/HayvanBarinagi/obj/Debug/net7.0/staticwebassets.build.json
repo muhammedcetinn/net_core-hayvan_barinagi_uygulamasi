@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/8qSxi/yp8MxDhtkqqQMqtjtiFzkiFiB5wi2726Eq64=",
+  "Hash": "REE91UkTJ+8zU3Q9nOtKpzpT5ixgPY4vOCmQo2gOe3E=",
   "Source": "HayvanBarinagi",
   "BasePath": "_content/HayvanBarinagi",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Ekran görüntüsü 2023-07-29 011416.png"
+    },
+    {
+      "Identity": "C:\\Users\\me_ct\\Documents\\GitHub\\net_core-hayvan_barinagi_uygulamasi\\HayvanBarinagi\\HayvanBarinagi\\wwwroot\\img\\logo.jpg",
+      "SourceId": "HayvanBarinagi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\me_ct\\Documents\\GitHub\\net_core-hayvan_barinagi_uygulamasi\\HayvanBarinagi\\HayvanBarinagi\\wwwroot\\",
+      "BasePath": "_content/HayvanBarinagi",
+      "RelativePath": "img/logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.jpg"
     },
     {
       "Identity": "C:\\Users\\me_ct\\Documents\\GitHub\\net_core-hayvan_barinagi_uygulamasi\\HayvanBarinagi\\HayvanBarinagi\\wwwroot\\js\\site.js",

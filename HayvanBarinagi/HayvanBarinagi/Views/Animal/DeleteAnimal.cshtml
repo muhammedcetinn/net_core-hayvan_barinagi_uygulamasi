@@ -3,32 +3,45 @@
 <form method="post">
     <!-- <input asp-for="Id" hidden/> -->
     <div class="">
-        <div class="">
-            <h2 class="">Delete Animal</h2>
+        <div class="row text-center">
+            <h3 class="py-2">Delete Animal</h3>
             <hr />
         </div>
-        <div class="mb-3">
-            <label asp-for="Name" class=""></label>
-            <input asp-for="Name" disabled class="form-control" />
+        <div class="m-2 col-1 row mx-auto">
+            @if (Model != null)
+            {
+                <img src="@Model.ImageURL" max-width="100px" />
+            }
         </div>
-        <div class="mb-3">
-            <label asp-for="Age" class=""></label>
-            <input asp-for="Age" disabled class="form-control" />
+        <div class="row justify-content-center">
+            <div class="m-2 col-md-2">
+                <label asp-for="Name" class=""></label>
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+            <div class="m-2 col-md-2">
+                <label asp-for="Age" class=""></label>
+                <input asp-for="Age" disabled class="form-control" />
+            </div>
+            <div class="m-2 col-md-2">
+                <label asp-for="AnimalTypeId" class=""></label>
+                <input asp-for="AnimalTypeId" disabled class="form-control" />
+            </div>
         </div>
-        <div class="mb-3">
-            <label asp-for="AnimalTypeId" class=""></label>
-            <input asp-for="AnimalTypeId" disabled class="form-control" />
-        </div>
-        <div class="mb-3">
+
+        <div class="row col-10 mx-auto m-3">
             <label asp-for="Features" class=""></label>
             <input asp-for="Features" disabled class="form-control" />
         </div>
-        <div class="mb-3">
+        <div class="mb-3" hidden>
             <label asp-for="ImageURL" class=""></label>
             <input asp-for="ImageURL" disabled class="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary">Delete Animal</button>
-        <a asp-controller="Animal" asp-action="Index" class="btn">Show Animals</a>
+        <div class="row col-6 mx-auto">
+            <button type="submit" class="btn btn-primary text-white m-2">Delete Animal</button>
+        </div>
+        <div class="row col-6 mx-auto">
+            <a asp-controller="Animal" asp-action="Index" class="btn btn-danger text-white m-2">Show Animals</a>
+        </div>
     </div>
 </form>
 

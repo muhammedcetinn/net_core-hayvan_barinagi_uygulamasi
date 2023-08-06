@@ -1,34 +1,34 @@
 ﻿@model List<Animal>
 @if (TempData["Success"] != null)
 {
-    <table class="table table-bordered bg-success">
+    <table class="table table-bordered bg-success text-white">
         <tr><th>@TempData["Success"]</th></tr>
     </table>
 }
 <div class="container">
-    <div class="">
-        <h1>Requests</h1>
+    <div class="row text-center">
+        <h3>Requests</h3>
     </div>
     @if(Model == null){<tr><td>Request is not found</td></tr>}
     <table class="table table-bordered">
         <tr>
+            <th>Image</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Type</th>
             <th>Features</th>
-            <th>Image</th>
+            <th>Type</th>
             <th>Status</th>
         </tr>
         @foreach (var animal in Model)
         {
           @* if (animal.isRequest == true)
             {*@
-                <tr>
-                    <td>@animal.Name</td>
-                    <td>@animal.Age</td>
-                    <td>@animal.AnimalType.Name</td>
-                    <td>@animal.Features</td>
-                    <td><img src="@animal.ImageURL" /></td>
+            <tr>
+                <td><img src="@animal.ImageURL" width="100px"/></td>
+                <td>@animal.Name</td>
+                <td>@animal.Age</td>
+                <td><details><summary>Click For Animal Features</summary>@animal.Features</details></td>
+                <td>@animal.AnimalType.Name</td>
                 @if (animal.Status == false)
                 {
                     if (animal.isRequest == false)

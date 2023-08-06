@@ -3,48 +3,42 @@
 <form method="post" enctype="multipart/form-data">
     @*enctype="multipart/form-data" Filedan resim eklerken hata alırız eklemezsek*@
     <input asp-for="ImageURL" hidden /> @*Resim url null gitmemesi için. file name aldık çünkü biz*@
-    <div class="">
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h2 class="">Create Requests</h2>
-                    <hr />
-                </div>
-                <div class="">
-                    <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Age" class=""></label>
-                    <input asp-for="Age" class="form-control" />
-                    <span asp-validation-for="Age" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="AnimalTypeId" class=""></label>
-                    <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
-                </div>
-                <div class="">
-                    <label asp-for="Features" class=""></label>
-                    <input asp-for="Features" class="form-control" />
-                    <span asp-validation-for="Features" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Features" class=""></label>
-                    <input asp-for="Features" class="form-control" />
-                    <span asp-validation-for="Features" class=""></span>
-                </div>
-                <div class="">
-                    <label asp-for="Recipient" class=""></label>
-                    <input asp-for="Recipient" disabled class="form-control" value="@ViewData["Username"]" />
-                    <input asp-for="Recipient" hidden class="form-control" value="@ViewData["Username"]" />
-                    <span asp-validation-for="Recipient" class=""></span>
-                </div>
-                <button type="submit" class="btn">Create Request</button>
 
-                <a asp-controller="Animal" asp-action="Index" class="btn">Cancel</a>
-            </div>
+
+    <div class="container">
+        <div class="row text-center my-1">
+            <h2 class="">Create Requests</h2>
+            <hr />
         </div>
+        <div class="my-1">
+            <label asp-for="Name" class=""></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class=""></span>
+        </div>
+        <div class="my-1">
+            <label asp-for="Age" class=""></label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class=""></span>
+        </div>
+        <div class="my-1">
+            <label asp-for="AnimalTypeId" class=""></label>
+            <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
+        </div>
+        <div class="my-1">
+            <label asp-for="Features" class=""></label>
+            <input asp-for="Features" class="form-control" />
+            <span asp-validation-for="Features" class=""></span>
+        </div>
+        <div class="my-1">
+            <label asp-for="Recipient" class=""></label>
+            <input asp-for="Recipient" disabled class="form-control" value="@ViewData["Username"]" />
+            <input asp-for="Recipient" hidden class="form-control" value="@ViewData["Username"]" />
+            <span asp-validation-for="Recipient" class=""></span>
+        </div>
+        <button type="submit" class="btn btn-border btn-primary text-white m-3">Create Request</button>
+
+        <a asp-controller="Animal" asp-action="Index" class="btn btn-border btn-danger text-white m-3">Cancel</a>
     </div>
+
 </form>
 

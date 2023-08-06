@@ -2,21 +2,19 @@
 @model List<Animal>
 @if (TempData["Success"] != null)
 {
-    <table class="table table-bordered bg-success">
+    <table class="table table-bordered bg-success text-white">
         <tr><th>@TempData["Success"]</th></tr>
     </table>
 }
 <div class="container">
-    <div class="">
-        <h1>Animals</h1>
-    </div>
+    <div class="row text-center"><h3>Animals</h3></div><hr />
     <table class="table table-bordered">
         <tr>
+            <th>Image</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Type</th>
             <th>Features</th>
-            <th>Image</th>
+            <th>Type</th>
             @if (User.IsInRole(UserRoles.Role_Admin))
             {
                 <th></th>
@@ -32,19 +30,20 @@
             if (animal.isRequest == false && animal.Status == false)
             {
                 <tr>
+                    <td><img src="@animal.ImageURL" width="100px"/></td>
                     <td>@animal.Name</td>
                     <td>@animal.Age</td>
+                    <td><details><summary>Click For Animal Features</summary>@animal.Features</details></td>
                     <td>@animal.AnimalType.Name</td>
-                    <td>@animal.Features</td>
-                    <td></td>
                     @if (User.IsInRole(UserRoles.Role_Admin))
                     {
-                        <td><a asp-controller="Animal" asp-action="AddOrUpdateAnimal" asp-route-id="@animal.Id" type="button" class="btn">Edit</a></td>
-                        <td><a asp-controller="Animal" asp-action="DeleteAnimal" asp-route-id="@animal.Id" type="button" class="btn">Delete</a></td>
+                        <td class="bg-primary"><a asp-controller="Animal" asp-action="AddOrUpdateAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-primary text-white">Edit</a></td>
+
+                        <td class="bg-danger"><a asp-controller="Animal" asp-action="DeleteAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-danger text-white">Delete</a></td>
                     }
                     @if (User.IsInRole(UserRoles.Role_Customer))
                     {
-                        <td><a asp-controller="Animal" asp-action="CreateRequest" asp-route-id="@animal.Id" type="button" class="btn">Create Request</a></td>
+                        <td class="bg-success"><a asp-controller="Animal" asp-action="CreateRequest" asp-route-id="@animal.Id" type="button" class="btn btn-success text-white">Create Request</a></td>
                     }
                 </tr>
             }
@@ -53,8 +52,8 @@
     </table>
     @if (User.IsInRole(UserRoles.Role_Admin))
     {
-        <div class="">
-            <a asp-controller="Animal" asp-action="AddOrUpdateAnimal" class="btn" type="button">Add New Animal</a>
+        <div class="row col-md-4 mx-auto ">
+            <a asp-controller="Animal" asp-action="AddOrUpdateAnimal" class="btn btn-success text-white" type="button">Add New Animal</a>
         </div>
     }
 </div>

@@ -14,15 +14,13 @@ namespace HayvanBarinagi.Controllers
         public readonly IAnimalRepository _animalRepository;
         //Foreign Key olarak verdigim sinifin kullanilmasi icin
         public readonly IAnimalTypeRepository _animalTypeRepository;
-        public readonly ITakeOwnershipRepository _takeOwnershipRepository;
         public readonly IWebHostEnvironment _webHostEnvironment; //Image eklemek için bunu eklememiz lazım
 
-        public AnimalController(IAnimalRepository animalRepository, IAnimalTypeRepository animalTypeRepository, IWebHostEnvironment webHostEnvironment, ITakeOwnershipRepository takeOwnershipRepository)
+        public AnimalController(IAnimalRepository animalRepository, IAnimalTypeRepository animalTypeRepository, IWebHostEnvironment webHostEnvironment)
         {
             _animalRepository = animalRepository;
             _animalTypeRepository = animalTypeRepository;
             _webHostEnvironment = webHostEnvironment;
-            _takeOwnershipRepository = takeOwnershipRepository;
         }
 
         public IActionResult Index()

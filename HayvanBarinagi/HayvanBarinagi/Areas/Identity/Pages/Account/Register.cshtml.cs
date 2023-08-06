@@ -98,9 +98,8 @@ namespace HayvanBarinagi.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-            public long IDNo { get; set; }
+            public string About { get; set; }
             public string NameSurname { get; set; }
-            public string? Address { get; set; }
         }
 
 
@@ -121,8 +120,7 @@ namespace HayvanBarinagi.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                
-                user.IDNo = Input.IDNo;
-                user.Address = Input.Address;
+                user.About = Input.About;
                 user.NameSurname = Input.NameSurname;
                 
                 var result = await _userManager.CreateAsync(user, Input.Password);

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HayvanBarinagi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230805120217_CreateDb")]
-    partial class CreateDb
+    [Migration("20230805185348_database-create")]
+    partial class databasecreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,32 +86,6 @@ namespace HayvanBarinagi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AnimalTypes");
-                });
-
-            modelBuilder.Entity("HayvanBarinagi.Models.TakeOwnership", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AnimalId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AnimalId");
-
-                    b.ToTable("TakeOwnerships");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -324,11 +298,8 @@ namespace HayvanBarinagi.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("IDNo")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("NameSurname")
                         .IsRequired()
@@ -346,17 +317,6 @@ namespace HayvanBarinagi.Migrations
                         .IsRequired();
 
                     b.Navigation("AnimalType");
-                });
-
-            modelBuilder.Entity("HayvanBarinagi.Models.TakeOwnership", b =>
-                {
-                    b.HasOne("HayvanBarinagi.Models.Animal", "Animal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Animal");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

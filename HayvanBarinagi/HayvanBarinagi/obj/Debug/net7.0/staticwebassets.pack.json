@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\img\\asd.png"
     },
     {
+      "Id": "C:\\Users\\me_ct\\Documents\\GitHub\\net_core-hayvan_barinagi_uygulamasi\\HayvanBarinagi\\HayvanBarinagi\\wwwroot\\img\\logo.jpg",
+      "PackagePath": "staticwebassets\\img\\logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\me_ct\\Documents\\GitHub\\net_core-hayvan_barinagi_uygulamasi\\HayvanBarinagi\\HayvanBarinagi\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -3,47 +3,46 @@
 <form method="post" enctype="multipart/form-data">
     @*enctype="multipart/form-data" Filedan resim eklerken hata alırız eklemezsek*@
     <input asp-for="ImageURL" hidden /> @*Resim url null gitmemesi için. file name aldık çünkü biz*@
-    <div class="">
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h2 class="">Accept Requests</h2>
-                    <hr />
-                </div>
-                <div class="" hidden>
-                    <label asp-for="Name" class=""></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class=""></span>
-                </div>
-                <div class="" hidden>
-                    <label asp-for="Age" class=""></label>
-                    <input asp-for="Age" class="form-control" />
-                    <span asp-validation-for="Age" class=""></span>
-                </div>
-                <div class="" hidden>
-                    <label asp-for="AnimalTypeId" class=""></label>
-                    <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
-                </div>
-                <div class="" hidden>
-                    <label asp-for="Features" class=""></label>
-                    <input asp-for="Features" class="form-control" />
-                    <span asp-validation-for="Features" class=""></span>
-                </div>
-                <div class="" hidden>
-                    <label asp-for="Features" class=""></label>
-                    <input asp-for="Features" class="form-control" />
-                    <span asp-validation-for="Features" class=""></span>
-                </div>
-                <div class="" hidden>
-                    <label asp-for="Recipient" class=""></label>
-                    <input asp-for="Recipient" disabled class="form-control"  />
-                    <input asp-for="Recipient" hidden class="form-control" />
-                    <span asp-validation-for="Recipient" class=""></span>
-                </div>
-                <button type="submit" class="btn">Accept Request</button>
-
-                <a asp-controller="Animal" asp-action="Requests" class="btn">Cancel</a>
-            </div>
+    <div class="container text-center">
+        <div class="row text-center">
+            <h2 class="">Accept Request</h2>
+            <hr />
+        </div>
+        <div class="" hidden>
+            <label asp-for="Name" class=""></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class=""></span>
+        </div>
+        <div class="" hidden>
+            <label asp-for="Age" class=""></label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class=""></span>
+        </div>
+        <div class="" hidden>
+            <label asp-for="AnimalTypeId" class=""></label>
+            <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
+        </div>
+        <div class="" hidden>
+            <label asp-for="Features" class=""></label>
+            <input asp-for="Features" class="form-control" />
+            <span asp-validation-for="Features" class=""></span>
+        </div>
+        <div class="" hidden>
+            <label asp-for="Features" class=""></label>
+            <input asp-for="Features" class="form-control" />
+            <span asp-validation-for="Features" class=""></span>
+        </div>
+        <div class="" hidden>
+            <label asp-for="Recipient" class=""></label>
+            <input asp-for="Recipient" disabled class="form-control" />
+            <input asp-for="Recipient" hidden class="form-control" />
+            <span asp-validation-for="Recipient" class=""></span>
+        </div>
+        <div class="row col-6 mx-auto">
+            <button type="submit" class="btn bg-primary text-white my-1">Accept Request</button><br />
+        </div>
+        <div class="row col-6 mx-auto">
+            <a asp-controller="Animal" asp-action="Requests" class="btn bg-danger text-white my-1">Cancel</a>
         </div>
     </div>
 </form>
