@@ -8,27 +8,27 @@
     
     <div class="table">
         <div class="row text-center">
-            <h3 class="py-2">@(Model == null ? "Add New Animal" : "Edit Animal")</h3>
+            <h3 class="py-2">@(Model == null ? @_localization.Getkey("str_AddNewAnimal") : @_localization.Getkey("str_EditAnimal"))</h3>
             <hr />
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 col-sm-10 m-2">
-                <label asp-for="Name"></label>
+                <label asp-for="Name">@_localization.Getkey("str_Name")</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class=""></span>
             </div>
             <div class="col-md-3 col-sm-10 m-2">
-                <label asp-for="Age"></label>
+                <label asp-for="Age">@_localization.Getkey("str_Age")</label>
                 <input asp-for="Age" class="form-control" />
                 <span asp-validation-for="Age" class=""></span>
             </div>
             <div class="col-md-3 col-sm-10 m-2">
-                <label asp-for="AnimalTypeId"></label>
+                <label asp-for="AnimalTypeId">@_localization.Getkey("str_Type")</label>
                 <select asp-for="AnimalTypeId" asp-items="ViewBag.AnimalTypeList" class="form-select"></select>
             </div>
         </div>
         <div class="row mx-auto mx-2 my-3 col-10">
-            <label asp-for="Features"></label>
+            <label asp-for="Features">@_localization.Getkey("str_Features")</label>
             <input asp-for="Features" class="form-control" />
             <span asp-validation-for="Features" class=""></span>
         </div>
@@ -36,6 +36,11 @@
             <label asp-for="Recipient" class=""></label>
             <input asp-for="Recipient" class="form-control" value="NULL" />
             <span asp-validation-for="Recipient" class=""></span>
+        </div>
+        <div class="" hidden>
+            <label asp-for="RecipientAbout" class=""></label>
+            <input asp-for="RecipientAbout" class="form-control" value="NULL" />
+            <span asp-validation-for="RecipientAbout" class=""></span>
         </div>
         <div class="row justify-content-center">
 
@@ -46,7 +51,7 @@
                 }
             </div>
             <div class=" row col-md-3 col-sm-8 mx-2 my-3">
-                <label asp-for="ImageURL"></label>
+                <label asp-for="ImageURL">@_localization.Getkey("str_Image")</label>
                 <input type="file" name="file" class="form-control" />
             </div>
         </div>
@@ -57,17 +62,17 @@
             {
                 @if (Model != null)
                 {
-                    <button type="submit" class="btn btn-primary text-white m-2">Update Animal</button>
+                    <button type="submit" class="btn btn-primary text-white m-2">@_localization.Getkey("str_Edit")</button>
                 }
                 else
                 {
-                    <button type="submit" class="btn btn-primary text-white m-2">Add Animal</button>
+                    <button type="submit" class="btn btn-primary text-white m-2">@_localization.Getkey("str_Add")</button>
 
                 }
             }
         </div>
         <div class="row col-6 mx-auto">
-            <a asp-controller="Animal" asp-action="Index" class="btn btn-danger text-white m-2">Show Animals</a>
+            <a asp-controller="Animal" asp-action="Index" class="btn btn-danger text-white m-2">@_localization.Getkey("str_BackToTable")</a>
         </div>
 
     </div>

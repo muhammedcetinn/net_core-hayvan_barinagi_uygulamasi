@@ -1,0 +1,64 @@
+﻿@model List<GiveAnimal>
+@if (TempData["Success"] != null)
+{
+    <table class="table table-bordered bg-success text-white">
+        <tr><th>@TempData["Success"]</th></tr>
+    </table>
+}
+<div class="container">
+    <div class="row text-center">
+        <h3>@_localization.Getkey("str_Requests")</h3>
+    </div>
+    
+    <table class="table">
+        <tr>
+            <th>@_localization.Getkey("str_Image")</th>
+            <th>@_localization.Getkey("str_Name")</th>
+            <th>@_localization.Getkey("str_Age")</th>
+            <th>@_localization.Getkey("str_Features")</th>
+            <th>@_localization.Getkey("str_Type")</th>
+            <th>@_localization.Getkey("str_Status")</th>
+        </tr>
+        @if (Model == null)
+        {
+            <tr><td>@_localization.Getkey("str_NotFound")</td></tr>
+        }
+        @foreach (var animal in Model)
+        {
+          @* if (animal.isRequest == true)
+            {*@
+            <tr>
+                <td><img src="@animal.ImageURL" width="100px"/></td>
+                <td>@animal.Name</td>
+                <td>@animal.Age</td>
+                <td><details><summary>@_localization.Getkey("str_ClickForFeatures")</summary>@animal.Features</details></td>
+                <td>
+                    @if (Thread.CurrentThread.CurrentCulture.Name.ToString() == "en-US")
+                    {
+                        @animal.AnimalType.NameEN
+                    }
+                    else
+                    {
+                        @animal.AnimalType.NameTR
+                    }
+                </td>
+                @if (animal.Status == false)
+                {
+                    if (animal.isRequest == false)
+                    {
+                        <td>@_localization.Getkey("str_Declined")</td>
+                    }
+                    else
+                    {
+                        <td>@_localization.Getkey("str_Waiting")</td>
+                    }
+                }
+                else{
+                    <td>@_localization.Getkey("str_Accepted")</td>
+                }
+            </tr>
+           @* }*@
+        }
+
+    </table>
+</div>

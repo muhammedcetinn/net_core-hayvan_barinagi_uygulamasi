@@ -7,14 +7,18 @@
     </table>
 }
 <div class="container">
-    <div class="row text-center"><h3>Animals</h3></div><hr />
-    <table class="table table-bordered">
+    <div class="row text-center"><h3>@_localization.Getkey("str_Animals")</h3></div><hr />
+    <table class="table">
+        @if (User.IsInRole(UserRoles.Role_Customer))
+        {
+            <tr><td><a asp-controller="Animal" asp-action="AddGAnimal" type="button" class="btn btn-success text-white">@_localization.Getkey("str_GiveAnimal")</a></td></tr>
+        }
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Features</th>
-            <th>Type</th>
+            <th>@_localization.Getkey("str_Image")</th>
+            <th>@_localization.Getkey("str_Name")</th>
+            <th>@_localization.Getkey("str_Age")</th>
+            <th>@_localization.Getkey("str_Features")</th>
+            <th>@_localization.Getkey("str_Type")</th>
             @if (User.IsInRole(UserRoles.Role_Admin))
             {
                 <th></th>
@@ -33,17 +37,26 @@
                     <td><img src="@animal.ImageURL" width="100px"/></td>
                     <td>@animal.Name</td>
                     <td>@animal.Age</td>
-                    <td><details><summary>Click For Animal Features</summary>@animal.Features</details></td>
-                    <td>@animal.AnimalType.Name</td>
+                    <td><details><summary>@_localization.Getkey("str_ClickForFeatures")</summary>@animal.Features</details></td>
+                    <td>
+                        @if (Thread.CurrentThread.CurrentCulture.Name.ToString() == "en-US")
+                        {
+                            @animal.AnimalType.NameEN
+                        }
+                        else
+                        {
+                            @animal.AnimalType.NameTR
+                        }
+                    </td>
                     @if (User.IsInRole(UserRoles.Role_Admin))
                     {
-                        <td class="bg-primary"><a asp-controller="Animal" asp-action="AddOrUpdateAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-primary text-white">Edit</a></td>
+                        <td class="bg-primary"><a asp-controller="Animal" asp-action="AddOrUpdateAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-primary text-white">@_localization.Getkey("str_Edit")</a></td>
 
-                        <td class="bg-danger"><a asp-controller="Animal" asp-action="DeleteAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-danger text-white">Delete</a></td>
+                        <td class="bg-danger"><a asp-controller="Animal" asp-action="DeleteAnimal" asp-route-id="@animal.Id" type="button" class="btn btn-danger text-white">@_localization.Getkey("str_Delete")</a></td>
                     }
                     @if (User.IsInRole(UserRoles.Role_Customer))
                     {
-                        <td class="bg-success"><a asp-controller="Animal" asp-action="CreateRequest" asp-route-id="@animal.Id" type="button" class="btn btn-success text-white">Create Request</a></td>
+                        <td class="bg-success"><a asp-controller="Animal" asp-action="CreateRequest" asp-route-id="@animal.Id" type="button" class="btn btn-success text-white">@_localization.Getkey("str_CreateReq")</a></td>
                     }
                 </tr>
             }
@@ -53,7 +66,7 @@
     @if (User.IsInRole(UserRoles.Role_Admin))
     {
         <div class="row col-md-4 mx-auto ">
-            <a asp-controller="Animal" asp-action="AddOrUpdateAnimal" class="btn btn-success text-white" type="button">Add New Animal</a>
+            <a asp-controller="Animal" asp-action="AddOrUpdateAnimal" class="btn btn-success text-white" type="button">@_localization.Getkey("str_Add")</a>
         </div>
     }
 </div>

@@ -3,16 +3,20 @@
 <form method="post">
     <!-- <input asp-for="Id" hidden/> -->
     <div class="container">
-        <div class="row text-center mt-3"><h3>Delete Type</h3></div><hr />
+        <div class="row text-center mt-3"><h3>@_localization.Getkey("str_DeleteType")</h3></div><hr />
         <div class="row col-md-3 mx-auto my-3 mt-4">
-            <label asp-for="Name" class="pb-1"></label>
-            <input asp-for="Name" disabled class="form-control" />
+            <label asp-for="NameEN" class="pb-1">@_localization.Getkey("str_Name") - ENG</label>
+            <input asp-for="NameEN" disabled class="form-control" />
+        </div>
+        <div class="row col-md-3 mx-auto my-3 mt-4">
+            <label asp-for="NameTR" class="pb-1">@_localization.Getkey("str_Name") - TR</label>
+            <input asp-for="NameTR" disabled class="form-control" />
         </div>
         <div class="row col-md-3 mx-auto my-3">
-            <button type="submit" class="btn btn-primary text-white">Delete Type</button>
+            <button type="submit" class="btn btn-primary text-white">@_localization.Getkey("str_Delete")</button>
         </div>
         <div class="row col-md-3 mx-auto m-4">
-            <a asp-controller="AnimalType" asp-action="Index" class="btn btn-danger text-white">Show Animal Types</a>
+            <a asp-controller="AnimalType" asp-action="Index" class="btn btn-danger text-white">@_localization.Getkey("str_BackToTable")</a>
         </div>
     </div>
 </form>

@@ -1,4 +1,5 @@
-﻿@using HayvanBarinagi.Utility;
+﻿@using HayvanBarinagi.Utility
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,41 +9,44 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HayvanBarinagi.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <header class="container">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mt-3 mb-3 py-3 px-5">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mt-3 mb-3 py-3 px-5">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HayvanBarinagi</a>
+                <a class="navbar-brand headerTitle text-white" asp-controller="Animal" asp-action="Index"><img src="~/img/sau.svg.png" width="40px" />@_localization.Getkey("str_AnimalShelter")</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                         @if (User.IsInRole(UserRoles.Role_Admin))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AnimalType" asp-action="Index">Animal Types</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="AnimalType" asp-action="Index">@_localization.Getkey("str_AnimalTypes")</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Animal" asp-action="Requests">Requests</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Animal" asp-action="Requests">@_localization.Getkey("str_Requests")</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Animal" asp-action="GiveAnimalRequest">@_localization.Getkey("str_GiveAnimal") @_localization.Getkey("str_Requests")</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Animal" asp-action="Index">Animals</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Animal" asp-action="Index">@_localization.Getkey("str_Animals")</a>
                         </li>
                         @if (User.IsInRole(UserRoles.Role_Customer))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Animal" asp-action="RequestsOfUser">My Requests</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Animal" asp-action="RequestsOfUser">@_localization.Getkey("str_MyRequests")</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Animal" asp-action="GiveAnimal">@_localization.Getkey("str_GiveAnimal") @_localization.Getkey("str_Requests")</a>
                             </li>
                         }
                         
@@ -53,16 +57,24 @@
         </nav>
     </header>
         <hr class="container" />
-    <div class="container py-3 border bg-warning shadow">
+    <div class="container py-3 centerDiv">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - HayvanBarinagi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer">
+        <div class="container text-secondary row mx-auto">
+            <div class="col-10">&copy; 2023 - Sakarya @_localization.Getkey("str_University") @_localization.Getkey("str_AnimalShelter")</div>
+            <div class="dropdown px-3 col-2 text-end">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">@Thread.CurrentThread.CurrentCulture.Name</button>
+                <ul class="dropdown-menu bg-secondary">
+                    <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="dropdown-item"><i class="flag-icon-gb"></i>English</a></li>
+                    <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="dropdown-item"><i class="flag-icon-gb"></i>Turkish</a></li>
+                </ul>
+            </div>
         </div>
+        
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

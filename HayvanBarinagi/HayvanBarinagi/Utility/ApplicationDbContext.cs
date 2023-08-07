@@ -9,6 +9,7 @@ namespace HayvanBarinagi.Utility
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<AnimalType> AnimalTypes { get; set; }
         public DbSet<Animal> Animals { get; set; }
+        public DbSet<GiveAnimal> GiveAnimals { get; set; }
         public DbSet<Customers> Customerss { get; set; }
     }
 }

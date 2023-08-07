@@ -29,6 +29,8 @@ namespace HayvanBarinagi.Models
         public bool Status { get; set; }
         [DefaultValue("NULL")]
         public string Recipient { get; set; }
+        [DefaultValue("NULL")]
+        public string RecipientAbout { get; set; }
 
     }
 }

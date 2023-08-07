@@ -2,38 +2,40 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = @_localization.Getkey("str_Login");
 }
 
+@using HayvanBarinagi.Services;
+@inject LanguageService _localization
 
 
-<div class="col-lg-3 col-md-5 col-sm-7 p-1 mx-auto my-3 p-4 border border-success rounded-3">
+<div class="col-lg-3 col-md-5 col-sm-7 p-1 mx-auto my-3 p-4 logiN rounded-3">
         <form id="account" method="post">
             <h1>@ViewData["Title"]</h1>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email" class="form-label text-dark">Email</label>
+            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="@_localization.Getkey("str_ExMail")" />
+            <label asp-for="Input.Email" class="form-label text-dark">@_localization.Getkey("str_Email")</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-            <label asp-for="Input.Password" class="form-label text-dark">Password</label>
+            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="@_localization.Getkey("str_Password")" />
+            <label asp-for="Input.Password" class="form-label text-dark">@_localization.Getkey("str_Password")</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="checkbox mb-3">
                 <label asp-for="Input.RememberMe" class="form-label">
                     <input class="form-check-input" asp-for="Input.RememberMe" />
-                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                @_localization.Getkey("str_RememberMe")
                 </label>
             </div>
             <div>
-                <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-dark">Log in</button>
+            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">@_localization.Getkey("str_Login")</button>
             </div>
-            <div>
+            <div class="pt-3">
                 <p>
-                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">@_localization.Getkey("str_Register")</a>
                 </p>
             </div>
         </form>

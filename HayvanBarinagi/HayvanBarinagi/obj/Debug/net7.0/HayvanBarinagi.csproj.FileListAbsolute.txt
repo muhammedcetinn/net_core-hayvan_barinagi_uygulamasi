@@ -260,3 +260,10 @@ C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarina
 C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\HayvanBarinagi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\bin\Debug\net7.0\en-US\HayvanBarinagi.resources.dll
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\bin\Debug\net7.0\tr-TR\HayvanBarinagi.resources.dll
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\HayvanBarinagi.Resources.SharedResource.en-US.resources
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\HayvanBarinagi.csproj.GenerateResource.cache
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\en-US\HayvanBarinagi.resources.dll
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\tr-TR\HayvanBarinagi.resources.dll
+C:\Users\me_ct\Documents\GitHub\net_core-hayvan_barinagi_uygulamasi\HayvanBarinagi\HayvanBarinagi\obj\Debug\net7.0\HayvanBarinagi.Resources.SharedResource.tr-TR.resources

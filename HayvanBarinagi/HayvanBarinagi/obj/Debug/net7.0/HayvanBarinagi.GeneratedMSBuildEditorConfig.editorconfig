@@ -196,6 +196,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEFjY2VwdFJlcS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/AddGanimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEFkZEdhbmltYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/AddOrUpdateAnimal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEFkZE9yVXBkYXRlQW5pbWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -212,6 +216,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXERlbGV0ZUFuaW1hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/GiveAnimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEdpdmVBbmltYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/GiveAnimalAcceptReq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEdpdmVBbmltYWxBY2NlcHRSZXEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/GiveAnimalDeclineReq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEdpdmVBbmltYWxEZWNsaW5lUmVxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/GiveAnimalRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEdpdmVBbmltYWxSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -222,14 +242,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Animal/RequestsOfUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5pbWFsXFJlcXVlc3RzT2ZVc2VyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/me_ct/Documents/GitHub/net_core-hayvan_barinagi_uygulamasi/HayvanBarinagi/HayvanBarinagi/Views/Shared/Error.cshtml]

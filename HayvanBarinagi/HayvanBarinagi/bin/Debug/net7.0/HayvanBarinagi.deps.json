@@ -19,6 +19,14 @@
         },
         "runtime": {
           "HayvanBarinagi.dll": {}
+        },
+        "resources": {
+          "en-US/HayvanBarinagi.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/HayvanBarinagi.resources.dll": {
+            "locale": "tr-TR"
+          }
         }
       },
       "Azure.Core/1.24.0": {

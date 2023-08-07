@@ -4,7 +4,7 @@
     <!-- <input asp-for="Id" hidden/> -->
     <div class="">
         <div class="row text-center">
-            <h3 class="py-2">Delete Animal</h3>
+            <h3 class="py-2">@_localization.Getkey("str_DeleteAnimal")</h3>
             <hr />
         </div>
         <div class="m-2 col-1 row mx-auto">
@@ -15,32 +15,32 @@
         </div>
         <div class="row justify-content-center">
             <div class="m-2 col-md-2">
-                <label asp-for="Name" class=""></label>
+                <label asp-for="Name" class="">@_localization.Getkey("str_Name")</label>
                 <input asp-for="Name" disabled class="form-control" />
             </div>
             <div class="m-2 col-md-2">
-                <label asp-for="Age" class=""></label>
+                <label asp-for="Age" class="">@_localization.Getkey("str_Age")</label>
                 <input asp-for="Age" disabled class="form-control" />
             </div>
             <div class="m-2 col-md-2">
-                <label asp-for="AnimalTypeId" class=""></label>
+                <label asp-for="AnimalTypeId" class="">@_localization.Getkey("str_Type")</label>
                 <input asp-for="AnimalTypeId" disabled class="form-control" />
             </div>
         </div>
 
         <div class="row col-10 mx-auto m-3">
-            <label asp-for="Features" class=""></label>
+            <label asp-for="Features" class="">@_localization.Getkey("str_Features")</label>
             <input asp-for="Features" disabled class="form-control" />
         </div>
         <div class="mb-3" hidden>
-            <label asp-for="ImageURL" class=""></label>
+            <label asp-for="ImageURL" class="">@_localization.Getkey("str_Image")</label>
             <input asp-for="ImageURL" disabled class="form-control" />
         </div>
         <div class="row col-6 mx-auto">
-            <button type="submit" class="btn btn-primary text-white m-2">Delete Animal</button>
+            <button type="submit" class="btn btn-primary text-white m-2">@_localization.Getkey("str_Delete")</button>
         </div>
         <div class="row col-6 mx-auto">
-            <a asp-controller="Animal" asp-action="Index" class="btn btn-danger text-white m-2">Show Animals</a>
+            <a asp-controller="Animal" asp-action="Index" class="btn btn-danger text-white m-2">@_localization.Getkey("str_BackToTable")</a>
         </div>
     </div>
 </form>

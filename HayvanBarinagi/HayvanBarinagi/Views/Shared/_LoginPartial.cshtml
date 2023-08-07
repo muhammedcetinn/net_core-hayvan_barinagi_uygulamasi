@@ -3,25 +3,26 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            <a id="manage" class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@_localization.Getkey("str_Hello") @UserManager.GetUserName(User)!</a>
     </li>
     <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Animal", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-white border-0">@_localization.Getkey("str_Logout")</button>
         </form>
     </li>
 }
 else
 {
     <li class="nav-item border border-primary px-2 mx-1">
-            <a class="nav-link text-primary" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-primary" id="register" asp-area="Identity" asp-page="/Account/Register">@_localization.Getkey("str_Register")</a>
     </li>
     <li class="nav-item border border-success px-2 mx-1">
-            <a class="nav-link text-success" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link text-success" id="login" asp-area="Identity" asp-page="/Account/Login">@_localization.Getkey("str_Login")</a>
     </li>
 }
 </ul>

@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  font
 }
 
 @media (min-width: 768px) {
@@ -7,14 +8,50 @@ html {
     font-size: 16px;
   }
 }
+/***************--------------**************/
 th,td{
     align-content:center;
     vertical-align:middle;
     text-align:center;
 }
+body {
+    background-color: #efeae4 /*#fefae0*/;
+    font-family: 'Ubuntu', sans-serif;
+}
+header {
+    background-color: #233B77; /*#dda15e*/;
+}
+.centerDiv {
+    background-color: #dee3eb;
+}
+table {
+    background-color: #f8f9fa4e;
+}
+tr {
+    border-bottom: 1px solid #bab6b6;
+}
+footer {
+    background-color: #00377b;
+}
+.nav-item:not(:last-child) {
+    margin: 0px 5px 0px 0px;
+    border-right: 1px solid #a1c19e;
+}
+.nav-item:hover {
+    font-weight: bold;
+}
 
+.headerTitle {
+    font-weight: bold;
+    color: darkblue;
+}
+.registeR, .logiN{
+    background-color:white;
+    box-shadow:0px 1px 3px 0px  black;
+}
+/**********----------------***************/
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {

@@ -1,44 +1,46 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = @_localization.Getkey("str_Register");
 }
 
+@using HayvanBarinagi.Services;
+@inject LanguageService _localization
 
 
 <div class="row">
-    <div class="col-lg-5 col-md-7 col-sm-9 p-1 mx-auto my-3 p-4 border border-primary rounded-3">
+    <div class="col-lg-5 col-md-7 col-sm-9 p-1 mx-auto my-3 p-4 registeR rounded-3">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h1>@ViewData["Title"]</h1>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.NameSurname" class="form-control" aria-required="true" placeholder="Name-Surname" />
-                <label asp-for="Input.NameSurname">Name - Surname</label>
+                <input asp-for="Input.NameSurname" class="form-control" aria-required="true" placeholder="@_localization.Getkey("str_NameSurname")" />
+                <label asp-for="Input.NameSurname">@_localization.Getkey("str_NameSurname")</label>
                 <span asp-validation-for="Input.NameSurname" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.About" class="form-control" aria-required="true" placeholder="Identity Number" />
-                <label asp-for="Input.About">About you...</label>
+                <input asp-for="Input.About" class="form-control" aria-required="true" placeholder="@_localization.Getkey("str_About")" />
+                <label asp-for="Input.About">@_localization.Getkey("str_About")</label>
                 <span asp-validation-for="Input.About" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="@_localization.Getkey("str_ExMail")" />
+                <label asp-for="Input.Email">@_localization.Getkey("str_Email")</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="@_localization.Getkey("str_Password")" />
+                <label asp-for="Input.Password">@_localization.Getkey("str_Password")</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="@_localization.Getkey("str_Password")" />
+                <label asp-for="Input.ConfirmPassword">@_localization.Getkey("str_ConfirmPassword")</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">@_localization.Getkey("str_Register")</button>
         </form>
     </div>
 </div>

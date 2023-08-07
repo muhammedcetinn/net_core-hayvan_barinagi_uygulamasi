@@ -5,7 +5,7 @@
     <input asp-for="ImageURL" hidden /> @*Resim url null gitmemesi için. file name aldık çünkü biz*@
     <div class="container text-center">
         <div class="row text-center">
-            <h2 class="">Accept Request</h2>
+            <h2 class="">@_localization.Getkey("str_AcceptReq")</h2>
             <hr />
         </div>
         <div class="" hidden>
@@ -38,11 +38,17 @@
             <input asp-for="Recipient" hidden class="form-control" />
             <span asp-validation-for="Recipient" class=""></span>
         </div>
-        <div class="row col-6 mx-auto">
-            <button type="submit" class="btn bg-primary text-white my-1">Accept Request</button><br />
+        <div class="" hidden>
+            <label asp-for="RecipientAbout" class=""></label>
+            <input asp-for="RecipientAbout" disabled class="form-control" />
+            <input asp-for="RecipientAbout" hidden class="form-control" />
+            <span asp-validation-for="RecipientAbout" class=""></span>
         </div>
         <div class="row col-6 mx-auto">
-            <a asp-controller="Animal" asp-action="Requests" class="btn bg-danger text-white my-1">Cancel</a>
+            <button type="submit" class="btn bg-primary text-white my-1">@_localization.Getkey("str_Yes")</button><br />
+        </div>
+        <div class="row col-6 mx-auto">
+            <a asp-controller="Animal" asp-action="Requests" class="btn bg-danger text-white my-1">@_localization.Getkey("str_No")</a>
         </div>
     </div>
 </form>

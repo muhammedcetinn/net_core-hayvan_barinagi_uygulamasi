@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HayvanBarinagi.Migrations
 {
     /// <inheritdoc />
-    public partial class databasecreate : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,8 @@ namespace HayvanBarinagi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                    NameEN = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    NameTR = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -79,13 +80,41 @@ namespace HayvanBarinagi.Migrations
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     isRequest = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    Recipient = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Recipient = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RecipientAbout = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Animals", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Animals_AnimalTypes_AnimalTypeId",
+                        column: x => x.AnimalTypeId,
+                        principalTable: "AnimalTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GiveAnimals",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Features = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AnimalTypeId = table.Column<int>(type: "int", nullable: false),
+                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    isRequest = table.Column<bool>(type: "bit", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Recipient = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RecipientAbout = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GiveAnimals", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GiveAnimals_AnimalTypes_AnimalTypeId",
                         column: x => x.AnimalTypeId,
                         principalTable: "AnimalTypes",
                         principalColumn: "Id",
@@ -241,6 +270,11 @@ namespace HayvanBarinagi.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GiveAnimals_AnimalTypeId",
+                table: "GiveAnimals",
+                column: "AnimalTypeId");
         }
 
         /// <inheritdoc />
@@ -265,13 +299,16 @@ namespace HayvanBarinagi.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "AnimalTypes");
+                name: "GiveAnimals");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "AnimalTypes");
         }
     }
 }

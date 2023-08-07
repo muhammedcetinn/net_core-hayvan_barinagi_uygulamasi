@@ -8,6 +8,9 @@ namespace HayvanBarinagi.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Animal Type name is not null!")]
         [MaxLength(20)]
-        public string Name { get; set; }
+        public string NameEN { get; set; }
+        [Required(ErrorMessage = "Animal Type name is not null!")]
+        [MaxLength(20)]
+        public string NameTR { get; set; }
     }
 }

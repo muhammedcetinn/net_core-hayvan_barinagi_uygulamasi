@@ -7,18 +7,22 @@
 }
 <div class="container">
     <div class="row text-center">
-        <h3>Requests</h3>
+        <h3>@_localization.Getkey("str_Requests")</h3>
     </div>
-    @if(Model == null){<tr><td>Request is not found</td></tr>}
-    <table class="table table-bordered">
+    
+    <table class="table">
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Features</th>
-            <th>Type</th>
-            <th>Status</th>
+            <th>@_localization.Getkey("str_Image")</th>
+            <th>@_localization.Getkey("str_Name")</th>
+            <th>@_localization.Getkey("str_Age")</th>
+            <th>@_localization.Getkey("str_Features")</th>
+            <th>@_localization.Getkey("str_Type")</th>
+            <th>@_localization.Getkey("str_Status")</th>
         </tr>
+        @if (Model == null)
+        {
+            <tr><td>@_localization.Getkey("str_NotFound")</td></tr>
+        }
         @foreach (var animal in Model)
         {
           @* if (animal.isRequest == true)
@@ -27,21 +31,30 @@
                 <td><img src="@animal.ImageURL" width="100px"/></td>
                 <td>@animal.Name</td>
                 <td>@animal.Age</td>
-                <td><details><summary>Click For Animal Features</summary>@animal.Features</details></td>
-                <td>@animal.AnimalType.Name</td>
+                <td><details><summary>@_localization.Getkey("str_ClickForFeatures")</summary>@animal.Features</details></td>
+                <td>
+                    @if (Thread.CurrentThread.CurrentCulture.Name.ToString() == "en-US")
+                    {
+                        @animal.AnimalType.NameEN
+                    }
+                    else
+                    {
+                        @animal.AnimalType.NameTR
+                    }
+                </td>
                 @if (animal.Status == false)
                 {
                     if (animal.isRequest == false)
                     {
-                        <td>Cancelled</td>
+                        <td>@_localization.Getkey("str_Declined")</td>
                     }
                     else
                     {
-                        <td>Waiting</td>
+                        <td>@_localization.Getkey("str_Waiting")</td>
                     }
                 }
                 else{
-                    <td>Approved</td>
+                    <td>@_localization.Getkey("str_Accepted")</td>
                 }
             </tr>
            @* }*@
